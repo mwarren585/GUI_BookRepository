@@ -111,7 +111,6 @@ public class SearchPatronsView extends View{
             public void handle(ActionEvent e) {
                 //clearErrorMessage();
                 processPatronSearchData();
-                //myModel.stateChangeRequest("PatronCollection", null);
 
             }
         });

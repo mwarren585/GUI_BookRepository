@@ -63,6 +63,7 @@ public class BookCollectionView extends View{
     //--------------------------------------------------------------------------
     protected void populateFields()
     {
+
         getEntryTableModelValues();
     }
 
@@ -93,6 +94,8 @@ public class BookCollectionView extends View{
         }
         catch (Exception e) {//SQLException e) {
             // Need to handle this exception
+            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -145,7 +148,7 @@ public class BookCollectionView extends View{
                 new PropertyValueFactory<BookTableModel, String>("author"));
 
         TableColumn titleColumn = new TableColumn("Title") ;
-        titleColumn.setMinWidth(100);
+        titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(
                 new PropertyValueFactory<BookTableModel, String>("title"));
 
@@ -159,8 +162,11 @@ public class BookCollectionView extends View{
         statusColumn.setCellValueFactory(
                 new PropertyValueFactory<BookTableModel, String>("status"));
 
-        tableOfBooks.getColumns().addAll(bookIdColumn,
-                authorColumn, titleColumn, publicationYearColumn, statusColumn);
+       /* tableOfBooks.getColumns().addAll(bookIdColumn,
+                authorColumn, titleColumn, publicationYearColumn, statusColumn); */
+
+        tableOfBooks.getColumns().addAll(
+                authorColumn, titleColumn, publicationYearColumn);
 
         tableOfBooks.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override

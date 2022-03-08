@@ -75,9 +75,12 @@ public class BookCollection extends EntityBase {
         }
 
     public Object getState(String key) {
-      if (key.equals("Books"))
+      if (key.equals("Books")) {
           return books;
-      return null;
+      }
+      else {
+          return null;
+      }
     }
     
     public void stateChangeRequest(String key, Object value) {

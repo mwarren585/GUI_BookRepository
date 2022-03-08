@@ -15,8 +15,8 @@ public class BookTableModel {
     public BookTableModel(Vector<String> bookData)
     {
         bookId =  new SimpleStringProperty(bookData.elementAt(0));
-        author =  new SimpleStringProperty(bookData.elementAt(1));
-        title =  new SimpleStringProperty(bookData.elementAt(2));
+        author =  new SimpleStringProperty(bookData.elementAt(2));
+        title =  new SimpleStringProperty(bookData.elementAt(1));
         publicationYear =  new SimpleStringProperty(bookData.elementAt(3));
         status = new SimpleStringProperty(bookData.elementAt(4));
     }

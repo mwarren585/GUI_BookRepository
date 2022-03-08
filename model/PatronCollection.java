@@ -4,7 +4,7 @@ import java.util.Properties;
 import java.util.Vector;
 
 public class PatronCollection extends EntityBase{
-    private static final String myTableName="Patron";
+    private static final String myTableName= "Patron";
     private Vector<Patron> patrons;
 
     public PatronCollection()
@@ -51,7 +51,7 @@ public class PatronCollection extends EntityBase{
     }
 
     public void queryHelper(String query) {
-        patrons = new Vector();
+        patrons = new Vector<Patron>();
 
         Vector allDataRetrieved = getSelectQueryResult(query);
 
@@ -114,8 +114,12 @@ public class PatronCollection extends EntityBase{
 
 
     public Object getState(String key) {
-      if(key.equals("Patrons"));
+      if(key.equals("Patrons")) {
           return patrons;
+      }
+      else{
+          return null;
+      }
     }
     
     public void stateChangeRequest(String key, Object value) {
